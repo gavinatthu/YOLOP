@@ -5,7 +5,7 @@ from yacs.config import CfgNode as CN
 _C = CN()
 
 _C.LOG_DIR = 'runs/'
-_C.GPUS = (0,1)     
+_C.GPUS = (0,1,2,3)     
 _C.WORKERS = 8
 _C.PIN_MEMORY = False
 _C.PRINT_FREQ = 20
@@ -137,21 +137,5 @@ def update_config(cfg, args):
     if args.logDir:
         cfg.LOG_DIR = args.logDir
     
-    # if args.conf_thres:
-    #     cfg.TEST.NMS_CONF_THRESHOLD = args.conf_thres
-
-    # if args.iou_thres:
-    #     cfg.TEST.NMS_IOU_THRESHOLD = args.iou_thres
-    
-
-
-    # cfg.MODEL.PRETRAINED = os.path.join(
-    #     cfg.DATA_DIR, cfg.MODEL.PRETRAINED
-    # )
-    #
-    # if cfg.TEST.MODEL_FILE:
-    #     cfg.TEST.MODEL_FILE = os.path.join(
-    #         cfg.DATA_DIR, cfg.TEST.MODEL_FILE
-    #     )
 
     cfg.freeze()
