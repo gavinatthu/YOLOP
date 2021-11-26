@@ -135,6 +135,7 @@ def main():
         final_output_dir, tb_log_dir, writer_dict,
         logger, device
     )
+
     fi = fitness(np.array(detect_results).reshape(1, -1))
     msg =   'Test:    Loss({loss:.3f})\n' \
             'Driving area Segment: Acc({da_seg_acc:.3f})    IOU ({da_seg_iou:.3f})    mIOU({da_seg_miou:.3f})\n' \
