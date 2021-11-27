@@ -150,11 +150,8 @@ def validate(epoch,config, val_loader, val_dataset, model, criterion, output_dir
     iouv = torch.linspace(0.5,0.95,10).to(device)     #iou vector for mAP@0.5:0.95
     niou = iouv.numel()
 
-    try:
-        import wandb
-    except ImportError:
-        wandb = None
-        log_imgs = 0
+    wandb = None
+    log_imgs = 0
 
     seen =  0 
     confusion_matrix = ConfusionMatrix(nc=model.nc) #detector confusion matrix
