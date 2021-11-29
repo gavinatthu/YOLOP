@@ -97,6 +97,7 @@ class MultiHeadLoss(nn.Module):
                 lbox += (1.0 - iou).mean()  # iou loss
 
                 # Objectness
+                print(model.gr)
                 tobj[b, a, gj, gi] = (1.0 - model.gr) + model.gr * iou.detach().clamp(0).type(tobj.dtype)  # iou ratio
 
                 # Classification

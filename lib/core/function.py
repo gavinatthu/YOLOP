@@ -49,6 +49,8 @@ def train(cfg, train_loader, model, criterion, optimizer, scaler, epoch, num_bat
     model.train()
     start = time.time()
     for i, (input, target, paths, shapes) in enumerate(train_loader):
+        # print("{},{},{},{}".format(input[0].shape, target[0].shape, target[1].shape, target[2].shape))
+        # torch.Size([3, 384, 640]),torch.Size([1000, 6]),torch.Size([96, 2, 384, 640]),torch.Size([96, 2, 384, 640])
         intermediate = time.time()
         #print('tims:{}'.format(intermediate-start))
         num_iter = i + num_batch * (epoch - 1)
@@ -75,7 +77,6 @@ def train(cfg, train_loader, model, criterion, optimizer, scaler, epoch, num_bat
         with amp.autocast(enabled=device.type != 'cpu'):
             outputs = model(input)
             total_loss, head_losses = criterion(outputs, target, shapes,model)
-            # print(head_losses)
 
         # compute gradient and do update step
         optimizer.zero_grad()
