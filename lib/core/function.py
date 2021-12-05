@@ -179,7 +179,7 @@ def validate(epoch,config, val_loader, val_dataset, model, criterion, output_dir
     T_inf = AverageMeter()
     T_nms = AverageMeter()
 
-    # switch to train mode
+    # switch to test mode
     model.eval()
     jdict, stats, ap, ap_class, wandb_images = [], [], [], [], []
 
@@ -487,6 +487,7 @@ def validate(epoch,config, val_loader, val_dataset, model, criterion, output_dir
     # print('mp:{},mr:{},map50:{},map:{}'.format(mp, mr, map50, map))
     #print segmet_result
     t = [T_inf.avg, T_nms.avg]
+    print(da_segment_result, ll_segment_result, detect_result, losses.avg, maps, t)
     return da_segment_result, ll_segment_result, detect_result, losses.avg, maps, t
         
 

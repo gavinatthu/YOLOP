@@ -143,7 +143,7 @@ def get_net(cfg, **kwargs):
 if __name__ == "__main__":
     model = get_net(False)
 
-    input_ = torch.randn((1, 3, 256, 256))
+    input_ = torch.randn((1, 3, 384, 640))
     gt_ = torch.rand((1, 2, 256, 256))
     # metric = SegmentationMetric(2)
 
