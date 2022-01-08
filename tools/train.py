@@ -257,7 +257,7 @@ def main():
     normalize = transforms.Normalize(
         mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
     )
-
+    #dataset.BddDataset()
     train_dataset = eval('dataset.' + cfg.DATASET.DATASET)(
         cfg=cfg,
         is_train=True,

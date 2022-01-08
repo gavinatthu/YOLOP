@@ -80,6 +80,6 @@ class BddDataset(AutoDriveDataset):
         return remain
 
     def evaluate(self, cfg, preds, output_dir, *args, **kwargs):
-        """  
+        """
         """
         pass
