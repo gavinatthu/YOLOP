@@ -5,7 +5,7 @@ from yacs.config import CfgNode as CN
 _C = CN()
 
 _C.LOG_DIR = 'runs/'
-_C.GPUS = (0,1,2,3)     
+_C.GPUS = (0,1)     
 _C.WORKERS = 8
 _C.PIN_MEMORY = False
 _C.PRINT_FREQ = 20
@@ -122,7 +122,7 @@ _C.TEST.BATCH_SIZE_PER_GPU = 24
 _C.TEST.MODEL_FILE = ''
 _C.TEST.SAVE_JSON = False
 _C.TEST.SAVE_TXT = False
-_C.TEST.PLOTS = True
+_C.TEST.PLOTS = False
 _C.TEST.NMS_CONF_THRESHOLD  = 0.001
 _C.TEST.NMS_IOU_THRESHOLD  = 0.6
 
